@@ -1,0 +1,23 @@
+{
+    "name": "douglas/marvel-hero",
+    "description": "Site integrado com a API da Marvel",
+    "authors": [
+        {
+            "name": "Douglas Horstmann",
+            "email": "ah93.douglas@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Marvel\\": "app/"
+        } 
+    },
+    "require": {
+        "slim/slim": "^4.5",
+        "twig/twig": "^3.0",
+        "slim/psr7": "^1.2"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.4"
+    }
+}

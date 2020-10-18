@@ -1,0 +1,33 @@
+{% extends 'base_template.twig' %}
+{% block main %}
+    
+    <div class="container-fluid mt-3">
+
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Stories</li>
+            </ol>
+        </nav>
+
+        <div class="row">
+            <div class="col-md-12 d-flex justify-content-center flex-row">
+                
+                {% if stories|length > 0 %}
+                    {% for storie in stories %}
+                        <div class="card" style="width: 17rem;">
+                            <img class="card-img-top" src="{{storie.thumbnail}}" alt="{{storie.title}}">
+                            <div class="card-body">
+                                <h5 class="card-title">{{storie.title}}</h5>
+                                {# <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> #}
+                                {# <p class="card-text">{{storie.description}}</p> #}
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

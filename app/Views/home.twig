@@ -1,0 +1,25 @@
+{% extends 'base_template.twig' %}
+{% block main %}
+    
+    <div class="container mt-3">
+        <div class="row">
+            <div class="col-md-12 d-flex justify-content-center flex-row">
+                
+                {% if heros|length > 0 %}
+                    {% for hero in heros %}
+                        <div class="card" style="width: 17rem;">
+                            <img class="card-img-top" src="{{hero.thumbnail}}" alt="{{hero.name}}">
+                            <div class="card-body">
+                                <h5 class="card-title">{{hero.name}}</h5>
+                                <p class="card-text">{{ (hero.description is null or hero.description is empty) ? 'No description.' : hero.description }}</p>
+                                <a href="/stories?heroId={{hero.id}}" class="card-link">View Stories</a>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
